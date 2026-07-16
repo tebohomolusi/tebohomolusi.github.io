@@ -3,20 +3,19 @@
 
   var html = document.documentElement;
 
-  /* ---------- Theme toggle ----------
-     No localStorage on purpose (keeps this safe to preview as a Claude
-     artifact). Once hosted for real on GitHub Pages, persist the choice by
-     adding localStorage.getItem/setItem('theme') at the two marked spots. */
+/* ---------- Theme toggle ---------- */
+  var stored = localStorage.getItem("theme");
   var prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
-  html.setAttribute("data-theme", prefersLight ? "light" : "dark");
 
   var themeToggle = document.getElementById("themeToggle");
   function setTheme(theme) {
     html.setAttribute("data-theme", theme);
     themeToggle.setAttribute("aria-pressed", theme === "light");
     themeToggle.setAttribute("aria-label", theme === "light" ? "Switch to dark theme" : "Switch to light theme");
-    // localStorage.setItem('theme', theme); // uncomment once deployed
+    localStorage.setItem("theme", theme);
   }
+  setTheme(stored || (prefersLight ? "light" : "dark"));
+
   themeToggle.addEventListener("click", function () {
     var current = html.getAttribute("data-theme");
     setTheme(current === "dark" ? "light" : "dark");
@@ -136,9 +135,7 @@
   document.getElementById("year").textContent = new Date().getFullYear();
 
   /* ---------- Contact form (mailto fallback) ----------
-     GitHub Pages can't run a backend, so this builds a mailto: link from
-     the form fields. Swap for a Formspree/Getform endpoint for an in-page
-     send. */
+     Opens your email app. */
   var form = document.getElementById("contactForm");
   form.addEventListener("submit", function (e) {
     e.preventDefault();
