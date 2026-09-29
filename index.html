@@ -1,385 +1,376 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Teboho Molusi — IT Support &amp; Systems Consultant</title>
-<meta name="description" content="Teboho Molusi — IT Support & Systems Consultant specialising in Microsoft 365, endpoint management, and networking, building toward Azure administration (AZ-104).">
-<meta property="og:title" content="Teboho Molusi — IT Support & Systems Consultant">
-<meta property="og:description" content="Evidence-based infrastructure work: Microsoft 365, endpoint management, networking, and a home lab built toward AZ-104.">
-<meta property="og:type" content="website">
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Teboho Molusi — ICT Specialist &amp; Systems Administrator</title>
+<meta name="description" content="Teboho Molusi — ICT Specialist, Systems Administrator and IT Consultant based in Mahikeng, South Africa.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>
+  /* Apply saved theme before first paint (no flash) and mark JS as available for reveal animations */
+  try {
+    var t = localStorage.getItem('theme');
+    if (t) document.documentElement.setAttribute('data-theme', t);
+    document.documentElement.classList.add('js');
+  } catch (e) {}
+</script>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-<a class="skip-link" href="#main">Skip to content</a>
-
-<!-- ============ SIDEBAR ============ -->
-<header class="sidebar" id="sidebar">
-  <div class="sidebar__top">
-    <div class="sidebar__brand">
-      <span class="brand-mark">TM</span>
-      <span class="status-dot status-dot--live" title="Open to opportunities"></span>
-    </div>
-    <nav class="sidebar__nav" id="sidebarNav" aria-label="Primary">
-      <a href="#home">home</a>
-      <a href="#about">about</a>
-      <a href="#projects">projects</a>
-      <a href="#labs">labs</a>
-      <a href="#certifications">certs</a>
-      <a href="#contact">contact</a>
-    </nav>
-  </div>
-
-  <div class="sidebar__bottom">
-    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light theme" aria-pressed="false">
-      <svg class="icon icon--sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg>
-      <svg class="icon icon--moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"></path></svg>
-      <span class="theme-toggle__label">theme</span>
-    </button>
-    <div class="sidebar__meta">
-      <span id="clockLocation">MAHIKENG, ZA</span>
-      <span id="clockTime">00:00:00</span>
+<a id="top"></a>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<div class="cursor-glow" aria-hidden="true"></div>
+<header id="site-header">
+  <div class="brand">
+    <span class="mark">TM</span>
+    <div>
+      <div class="name">TEBOHO MOLUSI</div>
+      <div class="tagline">ICT / SYSTEMS / INFRASTRUCTURE</div>
     </div>
   </div>
-
-  <button class="sidebar__burger" id="sidebarBurger" type="button" aria-label="Open menu" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
+  <nav id="site-nav">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#resume" class="resume-link">Resume</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="header-right">
+    <button id="theme-toggle" aria-label="Toggle theme">[ light ]</button>
+    <button id="nav-toggle" aria-label="Toggle menu">[ ☰ ]</button>
+  </div>
 </header>
 
-<main id="main">
-
-  <!-- ============ HOME ============ -->
-  <section class="home" id="home">
-    <span class="badge-live"><span class="status-dot status-dot--live"></span>Open to Infrastructure &amp; Cloud roles — Gauteng</span>
-
-    <p class="prompt">$ whoami</p>
-    <h1 class="home__name">Teboho Molusi</h1>
-    <p class="home__role">IT Support &amp; Systems Consultant</p>
-    <p class="home__stack">Microsoft 365 · Endpoint Management · Networking · Azure · Security</p>
-    <p class="home__lede">I keep school and small-business infrastructure running: identity, devices, and networks administered with the same discipline I bring to my own home lab — verify before you claim it, and document what you build.</p>
-
-    <div class="home__actions">
-      <a href="#projects" class="btn btn--primary">View Projects</a>
-      <a href="assets/Teboho-Molusi-CV.pdf" class="btn btn--ghost">Download CV</a>
-      <a href="#contact" class="btn btn--text">Contact me →</a>
+<section class="hero" id="home">
+  <canvas id="rain-canvas" aria-hidden="true"></canvas>
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-scrim"></div>
+  <div class="hero-layout wrap">
+    <div class="hero-copy">
+      <span class="badge"><span class="dot"></span>Available for ICT Specialist &amp; Systems Administrator roles</span>
+      <p class="prompt-line">root@teboho:~$ whoami</p>
+      <h1>Teboho <span>Molusi</span>.</h1>
+      <p class="typing-line" id="typing-line">&gt; ICT Support Specialist_</p>
+      <p class="pitch">IT professional with hands-on experience across school ICT, Microsoft&nbsp;365, endpoint management, identity, networking, infrastructure and IT consultancy.</p>
+      <div class="cta-row">
+        <a href="#projects" class="btn btn-primary">Explore the work</a>
+        <a href="#contact" class="btn btn-ghost">Start a conversation</a>
+      </div>
+      <p class="location-line"><strong>Mahikeng, North West</strong> · open to Gauteng relocation · full-time, contract, hybrid or remote</p>
     </div>
+    <aside class="stat-card" aria-label="Experience at a glance">
+      <div class="stat-head"><span>system.status</span><span class="live">● LIVE</span></div>
+      <div class="stat-row"><span>Education ICT</span><strong>6+ yrs</strong></div>
+      <div class="stat-row"><span>M365 environment</span><strong><span data-count-to="400">0</span> licences</strong></div>
+      <div class="stat-row"><span>Campuses supported</span><strong><span data-count-to="5">0</span>+</strong></div>
+      <div class="stat-row"><span>Devices administered</span><strong><span data-count-to="100">0</span>+</strong></div>
+      <div class="stat-row"><span>Current track</span><strong>AZ-104 / MD-102</strong></div>
+    </aside>
+  </div>
+</section>
 
-    <div class="home__panels">
-      <div class="status-widget">
-        <div class="status-widget__head">
-          <span>service-status.log</span>
-          <span class="tag tag--verified">live</span>
-        </div>
-        <ul class="status-widget__list">
-          <li><span>Microsoft 365 Administration</span><span class="status-pill status-pill--live">live</span></li>
-          <li><span>Endpoint Management (Intune / JAMF Pro)</span><span class="status-pill status-pill--live">live</span></li>
-          <li><span>Networking</span><span class="status-pill status-pill--live">live</span></li>
-          <li><span>Active Directory &amp; Identity (home lab)</span><span class="status-pill status-pill--live">active</span></li>
-          <li><span>Azure Administration (AZ-104)</span><span class="status-pill status-pill--learning">learning</span></li>
-        </ul>
+<div class="tech-ribbon" aria-hidden="true">
+  <div class="ribbon-track">
+    <span>UBUNTU SERVER</span><i>✦</i><span>MICROSOFT 365</span><i>✦</i><span>ENTRA ID</span><i>✦</i><span>INTUNE</span><i>✦</i><span>WINDOWS SERVER</span><i>✦</i><span>HYPER-V</span><i>✦</i><span>NETWORKING</span><i>✦</i><span>EDTECH</span><i>✦</i>
+    <span>UBUNTU SERVER</span><i>✦</i><span>MICROSOFT 365</span><i>✦</i><span>ENTRA ID</span><i>✦</i><span>INTUNE</span><i>✦</i><span>WINDOWS SERVER</span><i>✦</i><span>HYPER-V</span><i>✦</i><span>NETWORKING</span><i>✦</i><span>EDTECH</span><i>✦</i>
+  </div>
+</div>
+
+<main class="wrap" id="main">
+
+  <section id="about" class="section reveal">
+    <p class="eyebrow">01 — About</p>
+    <h2>Infrastructure is only useful when people can rely on it.</h2>
+    <div class="about-grid">
+      <div class="prose">
+        <p>I'm an IT support specialist based in Mahikeng, North West, who moved from general IT support into school ICT and grew into work spanning identity, endpoint management, infrastructure and education technology.</p>
+        <p>I started at IIE Rosebank College's Pretoria campus, completing a Higher Certificate in IT Support Services in 2015, then returned as an ICT support volunteer. From there: St&nbsp;Patrick's&nbsp;CBC supporting a multi-campus device fleet and infrastructure, followed by my role as the sole on-site ICT Specialist at Kimberley Girls' High School.</p>
+        <p>Alongside employment, I founded EdiVision24 Technologies in 2019, providing IT and web consultancy to schools and SMEs.</p>
+        <p>IT isn't only configuring technology — it is users, reliability, documentation, security and staying calm when something breaks at the worst possible time.</p>
+        <p class="philosophy">// experience built, not claimed.</p>
       </div>
-
-      <div class="stat-grid">
-        <div class="stat">
-          <span class="stat__value" data-count="6" data-suffix="+">0</span>
-          <span class="stat__label">Years in ICT</span>
-        </div>
-        <div class="stat">
-          <span class="stat__value" data-count="330" data-suffix="+">0</span>
-          <span class="stat__label">M365 accounts migrated</span>
-        </div>
-        <div class="stat">
-          <span class="stat__value" data-count="100" data-suffix="+">0</span>
-          <span class="stat__label">Apple devices managed</span>
-        </div>
-        <div class="stat">
-          <span class="stat__value" data-count="3">0</span>
-          <span class="stat__label">Consecutive MIEE years</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ ABOUT ============ -->
-  <section class="section" id="about">
-    <p class="eyebrow">01 — about</p>
-    <h2>Experience built, not claimed.</h2>
-
-    <div class="about__grid">
-      <div class="about__copy">
-        <p>Six years supporting Microsoft 365 administration, Active Directory, endpoint management, networking, and IT infrastructure across education and small-business environments—delivering practical solutions that keep people productive and systems running.</p>
-        <p>That foundation now drives my transition into cloud infrastructure, with hands-on experience in Hyper-V, Microsoft Entra ID, and Microsoft Azure as I prepare for the Microsoft Azure Administrator (AZ-104) certification.</p>
-      </div>
-
-      <ol class="timeline">
-        <li>
-          <span class="timeline__date">2015</span>
-          <span class="timeline__title">Higher Certificate in IT Support Services</span>
-          <span class="timeline__meta">IIE Rosebank College</span>
-        </li>
-        <li>
-          <span class="timeline__date">2019</span>
-          <span class="timeline__title">Founded EdiVision24 Technologies</span>
-          <span class="timeline__meta">Self-employed ICT consultancy — ongoing</span>
-        </li>
-        <li>
-          <span class="timeline__date">2020–2024</span>
-          <span class="timeline__title">IT Support Technician &amp; Innovation Specialist</span>
-          <span class="timeline__meta">St Patrick's CBC</span>
-        </li>
-        <li>
-          <span class="timeline__date">Nov 2024–Jan 2026</span>
-          <span class="timeline__title">Sole ICT Specialist</span>
-          <span class="timeline__meta">Kimberley Girls' High School</span>
-        </li>
-        <li class="timeline__now">
-          <span class="timeline__date">2026</span>
-          <span class="timeline__title">Preparing for Microsoft Azure Administrator (AZ-104)</span>
-          <span class="timeline__meta">Exam scheduled September 2026</span>
-        </li>
-      </ol>
-    </div>
-
-    <div class="chip-row">
-      <div class="chip"><span class="chip__label">Based in</span><span class="chip__value">Mahikeng, North West</span></div>
-      <div class="chip"><span class="chip__label">Languages</span><span class="chip__value">English · Sesotho · Setswana · Afrikaans</span></div>
-      <div class="chip"><span class="chip__label">Home lab</span><span class="chip__value">edivision24.local on Hyper-V</span></div>
-      <div class="chip"><span class="chip__label">Studying toward</span><span class="chip__value">AZ-104</span></div>
-    </div>
-  </section>
-
-  <!-- ============ PROJECTS ============ -->
-  <section class="section section--alt" id="projects">
-    <p class="eyebrow">02 — projects</p>
-    <h2>Case studies, not a skills list.</h2>
-    <p class="section__intro">Real problems from school and small-business environments — what was broken, what I changed, and what it took.</p>
-
-    <div class="project-list">
-
-      <article class="project-card">
-        <div class="project-card__tag"><span class="tag tag--verified">Verified</span><span class="project-card__org">Kimberley Girls' High School</span></div>
-        <h3>School-wide Microsoft 365 migration</h3>
-        <div class="project-card__grid">
-          <div><span class="project-label">Problem</span><p>Staff and students needed to move onto Microsoft 365 with minimal disruption to the school day.</p></div>
-          <div><span class="project-label">Solution</span><p>Planned and executed the migration for 30+ staff and educator accounts, then provisioned around 300 student A3 licences in a structured rollout.</p></div>
-          <div><span class="project-label">Tools</span><p>Microsoft 365 Admin Center · Exchange Online · Entra ID</p></div>
-          <div><span class="project-label">Outcome</span><p>Whole-school shift to Microsoft 365 with a phased rollout that kept classes running.</p></div>
-        </div>
-      </article>
-
-      <article class="project-card">
-        <div class="project-card__tag"><span class="tag tag--verified">Verified</span><span class="project-card__org">St Patrick's CBC</span></div>
-        <h3>Multi-campus Apple device management</h3>
-        <div class="project-card__grid">
-          <div><span class="project-label">Problem</span><p>Apple hardware — iPads and Apple TVs — needed consistent management and support across five separate campuses.</p></div>
-          <div><span class="project-label">Solution</span><p>Deployed and administered JAMF Pro to manage the full device fleet centrally: enrollment, configuration, and ongoing support.</p></div>
-          <div><span class="project-label">Tools</span><p>JAMF Pro · Apple TV · iPadOS</p></div>
-          <div><span class="project-label">Outcome</span><p>100+ devices under consistent management across five campuses from a single console.</p></div>
-        </div>
-      </article>
-
-      <article class="project-card">
-        <div class="project-card__tag"><span class="tag tag--verified">Verified</span><span class="project-card__org">Kimberley Girls' High School</span></div>
-        <h3>Endpoint compliance with Microsoft Intune</h3>
-        <div class="project-card__grid">
-          <div><span class="project-label">Problem</span><p>New devices needed to be enrolled and kept compliant without manual, device-by-device checking.</p></div>
-          <div><span class="project-label">Solution</span><p>Enrolled every new device into Microsoft Intune and verified compliance status directly through the Intune portal as part of standard onboarding.</p></div>
-          <div><span class="project-label">Tools</span><p>Microsoft Intune · Microsoft 365</p></div>
-          <div><span class="project-label">Outcome</span><p>A consistent, checkable compliance baseline across the device estate.</p></div>
-        </div>
-      </article>
-
-      <article class="project-card">
-        <div class="project-card__tag"><span class="tag tag--verified">Verified</span><span class="project-card__org">Kimberley Girls' High School</span></div>
-        <h3>Help desk implementation</h3>
-        <div class="project-card__grid">
-          <div><span class="project-label">Problem</span><p>Support requests had no structured intake or tracking, making resolution slow and inconsistent.</p></div>
-          <div><span class="project-label">Solution</span><p>Implemented Spiceworks as the school's help desk platform, structuring ticket intake and triage.</p></div>
-          <div><span class="project-label">Tools</span><p>Spiceworks</p></div>
-          <div><span class="project-label">Outcome</span><p>High first-call resolution on incoming tickets.</p></div>
-        </div>
-      </article>
-
-      <article class="project-card project-card--ongoing">
-        <div class="project-card__tag"><span class="tag tag--ongoing">Ongoing since 2019</span><span class="project-card__org">EdiVision24 Technologies</span></div>
-        <h3>Independent ICT consultancy</h3>
-        <div class="project-card__grid">
-          <div><span class="project-label">Problem</span><p>Schools and small businesses often need reliable IT support without the overhead of a full internal team.</p></div>
-          <div><span class="project-label">Solution</span><p>Run an ongoing consultancy providing IT support and systems consulting directly to schools and small businesses.</p></div>
-          <div><span class="project-label">Tools</span><p>Microsoft 365 · Networking · Endpoint Management</p></div>
-          <div><span class="project-label">Outcome</span><p>A continuous client base since 2019, alongside full-time institutional work.</p></div>
-        </div>
-      </article>
-
-    </div>
-  </section>
-
-  <!-- ============ LABS ============ -->
-  <section class="section" id="labs">
-    <p class="eyebrow">03 — labs</p>
-    <h2>The home lab.</h2>
-    <p class="section__intro">Built on Hyper-V to get hands-on with what client environments don't let me touch — documented as I go.</p>
-
-    <div class="lab-list">
-      <article class="lab-card">
-        <div class="lab-card__head">
-          <span class="lab-card__id">LAB-01</span>
-          <h3>Domain services on Hyper-V</h3>
-          <span class="tag tag--verified">Active</span>
-        </div>
-        <p>Running Active Directory Domain Services on <code>edivision24.local</code>, hosted on Hyper-V — my current environment for identity and Windows Server work.</p>
-        <div class="lab-card__tags"><span>Hyper-V</span><span>Windows Server 2022</span><span>Active Directory</span></div>
-      </article>
-
-      <article class="lab-card">
-        <div class="lab-card__head">
-          <span class="lab-card__id">LAB-02</span>
-          <h3>Hybrid identity with Proxmox</h3>
-          <span class="tag tag--verified">Active</span>
-        </div>
-        <p>Proxmox running alongside Hyper-V as a secondary hypervisor, with Entra Connect syncing on-premises identity to Microsoft Entra ID.</p>
-        <div class="lab-card__tags"><span>Proxmox</span><span>Entra Connect</span><span>Hybrid Identity</span></div>
-      </article>
-
-      <article class="lab-card">
-        <div class="lab-card__head">
-          <span class="lab-card__id">LAB-03</span>
-          <h3>Azure administration, in progress</h3>
-          <span class="tag tag--progress">In progress</span>
-        </div>
-        <p>Working through core AZ-104 territory — virtual networks, network security groups, and monitoring — ahead of the September 2026 exam.</p>
-        <div class="lab-card__tags"><span>Azure</span><span>AZ-104</span></div>
-      </article>
-
-      <article class="lab-card lab-card--archived">
-        <div class="lab-card__head">
-          <span class="lab-card__id">LAB-04</span>
-          <h3>SC-300 / SC-401 identity lab</h3>
-          <span class="tag tag--ongoing">Archived</span>
-        </div>
-        <p>An earlier hybrid-identity environment built specifically to study identity governance and security concepts for SC-300 and SC-401. No longer the active lab — kept for reference.</p>
-        <div class="lab-card__tags"><span>Entra ID</span><span>Identity Governance</span><span>Archived</span></div>
-      </article>
-    </div>
-  </section>
-
-  <!-- ============ CERTIFICATIONS ============ -->
-  <section class="section section--alt" id="certifications">
-    <p class="eyebrow">04 — certifications</p>
-    <h2>Qualifications &amp; recognition.</h2>
-    <p class="section__intro">Verified and in progress — kept clearly separate on purpose.</p>
-
-    <div class="cert-grid">
-      <div class="cert-card">
-        <span class="tag tag--verified">Verified</span>
-        <h3>CompTIA A+</h3>
-        <p>Core hardware and IT support fundamentals.</p>
-        <span class="cert-card__date">Completed</span>
-      </div>
-      <div class="cert-card">
-        <span class="tag tag--verified">Verified</span>
-        <h3>Higher Certificate in IT Support Services</h3>
-        <p>IIE Rosebank College</p>
-        <span class="cert-card__date">2015</span>
-      </div>
-      <div class="cert-card">
-        <span class="tag tag--verified">Verified</span>
-        <h3>Power Learn Project — Certificate of Achievement</h3>
-        <p>Software Development - 16 week programme</p>
-        <span class="cert-card__date">December 2023</span>
-      </div>
-      <div class="cert-card">
-        <span class="tag tag--verified">Verified</span>
-        <h3>Microsoft Innovative Educator Expert</h3>
-        <p>2022–2023 cohort</p>
-        <span class="cert-card__date">Issued September 2022</span>
-      </div>
-      <div class="cert-card">
-        <span class="tag tag--verified">Verified</span>
-        <h3>Microsoft Innovative Educator Expert</h3>
-        <p>2023–2024 cohort</p>
-        <span class="cert-card__date">Issued October 2023</span>
-      </div>
-      <div class="cert-card">
-        <span class="tag tag--verified">Verified</span>
-        <h3>Microsoft Innovative Educator Expert</h3>
-        <p>2024–2025 cohort</p>
-        <span class="cert-card__date">Issued September 2024</span>
-      </div>
-      <div class="cert-card cert-card--progress">
-        <span class="tag tag--progress">In progress</span>
-        <h3>AZ-104: Microsoft Azure Administrator</h3>
-        <p>Home lab underway</p>
-        <span class="cert-card__date">Scheduled September 2026</span>
-      </div>
-      <div class="cert-card cert-card--progress">
-        <span class="tag tag--progress">Planned</span>
-        <h3>CompTIA Network+</h3>
-        <p>Next after AZ-104</p>
-      </div>
-      <div class="cert-card cert-card--progress">
-        <span class="tag tag--progress">Planned</span>
-        <h3>CompTIA Security+</h3>
-        <p>Next after AZ-104</p>
-      </div>
-    </div>
-    <p class="cert-note">MIEE badges span three consecutive academic years (2022–2025), each independently issued and verifiable on Credly.</p>
-  </section>
-
-  <!-- ============ CONTACT ============ -->
-  <section class="section section--contact" id="contact">
-    <p class="eyebrow">05 — contact</p>
-    <h2>Let's talk about infrastructure.</h2>
-    <p class="section__intro">Open to IT Infrastructure, Microsoft 365, Cloud and Cybersecurity roles across Gauteng — and always open to ICT consulting enquiries through EdiVision24.</p>
-
-    <div class="contact__grid">
-      <form class="contact-form" id="contactForm">
-        <label for="cf-name">Name
-          <input type="text" id="cf-name" name="name" required>
-        </label>
-        <label for="cf-email">Email
-          <input type="email" id="cf-email" name="email" required>
-        </label>
-        <label for="cf-message">Message
-          <textarea id="cf-message" name="message" rows="5" required></textarea>
-        </label>
-        <button type="submit" class="btn btn--primary">Send message</button>
-      </form>
-
-      <div class="contact-links">
-        <a class="contact-link" href="mailto:molusiteboho@gmail.com">
-          <span class="contact-link__label">Email</span>
-          <span class="contact-link__value">molusiteboho@gmail.com</span>
-        </a>
-        <a class="contact-link" href="https://www.linkedin.com/in/teboho-molusi/" target="_blank" rel="noopener">
-          <span class="contact-link__label">LinkedIn</span>
-          <span class="contact-link__value">Linkedin.com/in/teboho-molusi</span>
-        </a>
-        <a class="contact-link" href="https://github.com/tebohomolusi/" target="_blank" rel="noopener">
-          <span class="contact-link__label">GitHub</span>
-          <span class="contact-link__value">github.com/tebohomolusi</span>
-        </a>
-        <a class="contact-link" href="assets/Teboho-Molusi-CV.pdf">
-          <span class="contact-link__label">CV</span>
-          <span class="contact-link__value">Download PDF</span>
-        </a>
+      <div class="fact-list">
+        <div><span>Location</span><strong>Mahikeng, North West</strong></div>
+        <div><span>Availability</span><strong>Open to opportunities</strong></div>
+        <div><span>Relocation</span><strong>Gauteng</strong></div>
+        <div><span>Experience</span><strong>6+ years in school ICT / IT</strong></div>
+        <div><span>Education</span><strong>Higher Cert., IT Support Services</strong></div>
+        <div><span>Environment</span><strong>Education · SME · Consultancy</strong></div>
+        <div><span>Work style</span><strong>On-site · Hybrid · Remote</strong></div>
+        <div><span>Interests</span><strong>Football · PC building, home lab, AI agents</strong></div>
       </div>
     </div>
   </section>
 
-  <footer class="footer">
-    <span class="footer__slogan">Built by hand. Verified before it's claimed.</span>
-    <span class="footer__copy">© <span id="year"></span> Teboho Molusi</span>
-    <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">↑</button>
-  </footer>
+  <section id="experience" class="section reveal">
+    <p class="eyebrow">02 — History</p>
+    <h2>Experience</h2>
+    <div class="timeline">
+      <article class="timeline-item">
+        <time>2019 — Present</time>
+        <div>
+          <h3>Founder &amp; IT Consultant</h3>
+          <span class="org">EdiVision24 Technologies</span>
+          <ul>
+            <li>Provide IT support, Microsoft 365 setup and web delivery for schools and SMEs.</li>
+            <li>Maintain ongoing website support relationships with independent schools.</li>
+            <li>Developing a Digital Readiness Programme concept for township and rural SMMEs.</li>
+          </ul>
+        </div>
+      </article>
+      <article class="timeline-item">
+        <time>Nov 2024 — Jan 2026</time>
+        <div>
+          <h3>ICT Specialist</h3>
+          <span class="org">Kimberley Girls' High School</span>
+          <ul>
+            <li>Sole on-site ICT resource; supported the Microsoft 365 environment as it expanded from 8 to 400 licences.</li>
+            <li>Implemented Conditional Access, MFA and Intune-related endpoint administration.</li>
+            <li>Implemented Ubuntu Server file sharing to improve SA-SAMS access.</li>
+            <li>Grew monthly support activity from 7 to 100+ tickets and completed a 52-unit hardware audit.</li>
+          </ul>
+        </div>
+      </article>
+      <article class="timeline-item">
+        <time>Jan 2020 — Sept 2024</time>
+        <div>
+          <h3>IT Support Administrator &amp; Innovation Specialist</h3>
+          <span class="org">St Patrick's CBC</span>
+          <ul>
+            <li>Managed 100+ iPads and Apple TVs across five campuses using JAMF Pro and Apple Configurator.</li>
+            <li>Supported FortiGate, Aruba wireless/switching and CCTV infrastructure.</li>
+            <li>Completed a high-school computer-lab SSD upgrade with the IT Manager.</li>
+            <li>Founded a Coding and Robotics programme covering Micro:bit, LEGO EV3, drones and Minecraft Education.</li>
+          </ul>
+        </div>
+      </article>
+      <article class="timeline-item">
+        <time>Feb 2016 — Feb 2017</time>
+        <div>
+          <h3>ICT Support Volunteer</h3>
+          <span class="org">IIE Rosebank College, Pretoria CBD</span>
+          <ul>
+            <li>Assisted the college's IT department with desktop hardware, software, student access cards and connectivity support.</li>
+            <li>Supported computer labs, workstation maintenance and device deployments for staff and students.</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="skills" class="section reveal">
+    <p class="eyebrow">03 — Skills</p>
+    <h2>What I bring</h2>
+    <div class="cap-grid">
+      <article><span class="tag">identity &amp; access</span>
+        <h3>Microsoft 365 &amp; Entra ID</h3>
+        <p>Licensing, provisioning, Conditional Access, MFA, Intune and hybrid identity concepts.</p>
+      </article>
+      <article><span class="tag">endpoint management</span>
+        <h3>Device Management</h3>
+        <p>JAMF Pro, Apple Configurator, Windows endpoint administration and hardware lifecycle work.</p>
+      </article>
+      <article><span class="tag">infrastructure</span>
+        <h3>Networking &amp; Security</h3>
+        <p>FortiGate, Aruba, wireless infrastructure, CCTV, Ubuntu Server and core troubleshooting.</p>
+      </article>
+      <article><span class="tag">it operations</span>
+        <h3>Support &amp; Documentation</h3>
+        <p>Ticket handling, incident resolution, deployment, audits, documentation and operational discipline.</p>
+      </article>
+      <article><span class="tag">client &amp; web delivery</span>
+        <h3>Consulting &amp; Web</h3>
+        <p>WordPress/WooCommerce delivery, maintenance and practical IT consultancy for schools and SMEs.</p>
+      </article>
+      <article><span class="tag">education ict</span>
+        <h3>EdTech Programmes</h3>
+        <p>Coding, robotics, Minecraft Education, Micro:bit, LEGO EV3 and classroom technology.</p>
+      </article>
+    </div>
+
+    <h3 class="sub-head">Technical stack</h3>
+    <div class="stack">
+      <div><label>Operating systems</label>
+        <p><span>Windows 11</span><span>Windows 10</span><span>Windows Server 2022</span><span>Ubuntu Server</span><span>macOS / Apple</span></p>
+      </div>
+      <div><label>Identity &amp; Directory</label>
+        <p><span>Active Directory</span><span>Microsoft Entra ID</span><span>Entra Connect</span><span>MFA</span></p>
+      </div>
+      <div><label>Endpoint Management</label>
+        <p><span>Microsoft Intune</span><span>JAMF Pro</span><span>Apple Configurator</span></p>
+      </div>
+      <div><label>Networking</label>
+        <p><span>TCP/IP</span><span>DNS</span><span>DHCP</span><span>Aruba</span><span>TP-Link</span><span>FortiGate</span></p>
+      </div>
+      <div><label>Cloud &amp; Productivity</label>
+        <p><span>Microsoft 365</span><span>Exchange Online</span><span>Exchange Online</span><span>Teams</span><span>Office 365</span></p>
+      </div>
+      <div><label>Cloud — building toward</label>
+        <p><span>Microsoft Azure</span><span>Azure CLI</span><span>Azure PowerShell</span><span>Resource Groups</span><span>VNets</span></p>
+      </div>
+      <div><label>Virtualization &amp; Infrastructure</label>
+        <p><span>Proxmox VE</span><span>Hyper-V</span><span>VirtualBox</span></p>
+      </div>
+      <div><label>Support tools</label>
+        <p><span>SpiceWorks</span><span>Freshdesk</span><span>Technical Troubleshooting</span><span>Command Line</span><span>Git / GitHub</span><span>Remote Support</span></p>
+      </div>
+      <div><label>Web &amp; Development</label>
+        <p><span>WordPress</span><span>Elementor</span><span>WooCommerce</span><span>HTML / CSS</span><span>JavaScript</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="section reveal">
+    <p class="eyebrow">04 — Key contributions</p>
+    <h2>Selected work</h2>
+
+    <article class="case-card featured">
+      <div class="meta">independent school · microsoft 365 / entra id / ubuntu · 2024–2026</div>
+      <h3>Kimberley Girls' High School — structured Microsoft 365 environment</h3>
+      <p>As the school's only on-site ICT resource, I worked across identity, access, licensing, provisioning, Conditional Access and file services.</p>
+      <div class="metric-row">
+        <div><strong data-count-to="400" data-count-from="8">8</strong><small>M365 licences (from 8)</small></div>
+        <div><strong data-count-to="37">0</strong><small>accounts provisioned</small></div>
+        <div><strong data-count-to="100" data-suffix="+">0+</strong><small>monthly tickets (from 7)</small></div>
+        <div><strong data-count-to="52">0</strong><small>hardware units audited</small></div>
+      </div>
+    </article>
+
+    <article class="case-card">
+      <div class="meta">independent school · apple / networking / cctv · 2020–2024</div>
+      <h3>St Patrick's CBC — multi-campus device &amp; infrastructure support</h3>
+      <p>Supported a 100+ device Apple fleet across five campuses, FortiGate and Aruba infrastructure, CCTV, a computer-lab SSD upgrade and the Coding and Robotics programme.</p>
+    </article>
+
+    <article class="case-card">
+      <div class="meta">consulting · wordpress / woocommerce · ongoing</div>
+      <h3>EdiVision24 — IT &amp; web delivery</h3>
+      <p>Ongoing IT support and web maintenance for schools and SMEs, including website retainers and practical digital delivery.</p>
+    </article>
+
+    <div class="lab-heading">
+      <h3 class="sub-head">Home lab</h3>
+      <span class="status-chip"><i></i> HANDS-ON LAB</span>
+    </div>
+    <p class="section-note">A working environment for hands-on infrastructure practice and the technologies I am actively building toward. The panel below is a static summary of the lab's configuration, not a live connection.</p>
+
+    <div class="lab-terminal" role="group" aria-label="Home lab configuration summary">
+      <div class="terminal-head">
+        <span class="term-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+        <strong>teboho@homelab:~</strong>
+        <span>STATIC SNAPSHOT</span>
+      </div>
+      <div class="terminal-body">
+        <p><b>hypervisor</b><span>Hyper-V</span></p>
+        <p><b>domain</b><span>EDIVISION24.LOCAL</span></p>
+        <p><b>network</b><span>LAB-INTERNAL · 192.168.1.x</span></p>
+        <p><b>dc01</b><span>Windows Server 2022 · AD DS · DNS</span></p>
+        <p><b>cl01</b><span>Windows 11 Enterprise · domain-joined</span></p>
+      </div>
+    </div>
+
+    <div class="lab-cols">
+      <div class="lab-col">
+        <h4>Hands-on</h4>
+        <p><i></i>Windows Server 2022 / AD DS</p>
+        <p><i></i>DNS</p>
+        <p><i></i>Windows 11 Hyper-V lab</p>
+        <p><i></i>Hyper-V virtualisation</p>
+        <p><i></i>Azure CLI — resource groups &amp; VNets</p>
+      </div>
+      <div class="lab-col roadmap">
+        <h4>Building / studying</h4>
+        <p><i></i>AZ-104 — Azure Administrator</p>
+        <p><i></i>MD-102 — Endpoint Administrator</p>
+        <p><i></i>Hybrid identity via Entra Connect</p>
+        <p><i></i>Intune endpoint administration</p>
+      </div>
+    </div>
+
+    <div class="rd-note"><strong>R&amp;D — EDI Vision Arcade Table:</strong> an early-stage educational computing and robotics concept. Still in research and planning, not yet in development — details are intentionally limited for now.</div>
+
+    <div class="gallery-card">
+      <div>
+        <h3>The Workshop Record</h3>
+        <p>3D prints, robotics sessions and classroom builds — the practical evidence behind the portfolio.</p>
+      </div>
+      <a href="gallery.html" class="btn btn-primary">See the gallery</a>
+    </div>
+  </section>
+
+  <section id="certifications" class="section reveal">
+    <p class="eyebrow">05 — Credentials</p>
+    <h2>Qualifications &amp; recognition</h2>
+    <div class="cred-cols">
+      <div>
+        <h3>Held</h3>
+        <p><b>CompTIA A+</b><small>CompTIA · Passed</small></p>
+        <p><b>Huawei Cloud Computing Certification</b><small>Huawei · Passed</small></p>
+        <p><b>Introduction to Cybersecurity</b><small>Cisco Networking Academy · Passed</small></p>
+        <p><b>LFS101: Introduction to Linux</b><small>The Linux Foundation · <a href="https://www.credly.com/badges/809aaf9c-2e5a-4cbd-a3f5-497d172d84af/public_url" target="_blank" rel="noopener noreferrer">view on Credly →</a></small></p>
+      </div>
+      <div>
+        <h3>Active</h3>
+        <p><b>Gemini Certified Educator</b><small>Google · Aug 2026 – Aug 2029</small></p>
+        <p><b>Microsoft Innovative Educator Expert</b><small>Microsoft · 2022–23 · 2023–24 · 2024–25</small></p>
+        <p><b>Minecraft Education Ambassador</b><small>Microsoft</small></p>
+        <p><b>Certificate in Software Development</b><small>Pan-African scholarship · 2023–24</small></p>
+      </div>
+      <div>
+        <h3>In progress</h3>
+        <p><b>Azure Administrator Associate (AZ-104)</b><small>Microsoft · Studying</small></p>
+        <p><b>Endpoint Administrator (MD-102)</b><small>Microsoft · Studying</small></p>
+        <p><b>Network+</b><small>CompTIA · Studying</small></p>
+        <p><b>Workspace for Education Fundamentals</b><small>Google · In progress</small></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="resume" class="section reveal">
+    <p class="eyebrow">06 — Resume</p>
+    <h2>Resume</h2>
+    <div class="resume-card">
+      <div>
+        <h3>Professional CV</h3>
+        <p>My latest professional CV is available as a PDF. You can view or download it below, or get in touch directly.</p>
+      </div>
+      <div class="cta-row">
+        <a class="btn btn-primary" id="resume-download" href="resume/Teboho-Molusi-IT-Support-Specialist-CV.pdf" download>Download PDF</a>
+        <a class="btn btn-ghost" href="mailto:molusiteboho@gmail.com?subject=Resume%20request">Email instead</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section reveal">
+    <p class="eyebrow">07 — Get in touch</p>
+    <h2>Let's connect</h2>
+    <p class="contact-intro">
+
+Open to ICT Specialist, Systems Administrator and technology-focused opportunities, with flexibility to relocate and contribute across IT infrastructure, digital technology, education technology and hands-on innovation.</p>
+    <div class="contact-grid">
+      <a href="mailto:molusiteboho@gmail.com"><span>email</span><strong>molusiteboho@gmail.com</strong></a>
+      <a href="tel:+27607941597"><span>phone</span><strong>060 794 1597</strong></a>
+      <a href="https://www.linkedin.com/in/teboho-molusi/" target="_blank" rel="noopener"><span>linkedin</span><strong>/in/teboho-molusi</strong></a>
+      <a href="https://github.com/tebohomolusi" target="_blank" rel="noopener"><span>github</span><strong>/tebohomolusi</strong></a>
+    </div>
+  </section>
 
 </main>
+
+<footer>
+  <div class="footer-inner">
+    <span>© <span id="year">2026</span> Teboho Molusi</span>
+    <span>ICT Specialist / Systems Administrator / IT Consultant</span>
+    <a href="#top" class="back-top">↑ Back to top</a>
+  </div>
+</footer>
 
 <script src="script.js"></script>
 </body>
