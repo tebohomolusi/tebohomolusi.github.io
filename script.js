@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const roles = [
       'ICT Support Specialist_',
       'Systems Administrator_',
-      'Microsoft 365 / Endpoint Specialist_',
+      'Microsoft 365 / Endpoint_',
       'IT Consultant_'
     ];
     if (typingEl && !reduceMotion) {
